@@ -1,7 +1,7 @@
 import Items from "../data/Items"
 import StoreItem from "../components/StoreItem"
 import { useState } from "react"
-import Pagination from "../components/Paginatiin"
+import Pagination from "../components/Pagination"
 
 
 
@@ -10,7 +10,7 @@ import Pagination from "../components/Paginatiin"
 
 
 const Store = () => {
-  const [currentPage,setCurrentPage]=useState(2)
+  const [currentPage,setCurrentPage]=useState(1)
   const [postsPerPage]=useState(8)
 
 
@@ -26,7 +26,7 @@ const Store = () => {
     <div className="w-fit mx-auto grid grid-cols-1 lg:grid-cols-4 md:grid-cols-2 justify-items-center justify-center gap-y-20 gap-x-14 mt-10 mb-5">
       
         
-      {Items.map((item )=>{return (<StoreItem id={item.id} name={item.name} imgUrl={item.imgUrl} price={item.price} />)})}  
+      {currentItemsInPage.map((item )=>{return (<StoreItem id={item.id} name={item.name} imgUrl={item.imgUrl} price={item.price} />)})}  
 
       
     </div>
